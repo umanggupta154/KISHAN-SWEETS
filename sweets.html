@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kishan Sweets | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      color: #4b2e2e;
+    }
+    .order-btn {
+  background: linear-gradient(135deg, #ff8c42, #ff4e00);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.order-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+    header {
+      background: linear-gradient(to right, #ffcc70, #ff8c42);
+      padding: 1.5rem;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #f7d794;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: 600;
+    }
+    section {
+      padding: 2rem;
+    }
+    .products, .reviews, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    footer {
+  background: linear-gradient(to right, #ffcc70, #ff8c42);
+  color: #4b2e2e;
+  padding: 2rem 1rem 1rem;
+  font-size: 1rem;
+  border-top: 4px solid #ff4e00;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-left h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 0.2rem 0;
+}
+
+.footer-right a {
+  color: #4b2e2e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #3d2b2b;
+}
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    #order form {
+      background-color: #fff3e6;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 500px;
+    }
+    #order input, #order textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+    #order button {
+      background-color: #c44d00;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    #order button:hover {
+      background-color: #a43b00;
+    }
+    .krishna-img {
+  max-width: 100px;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+header {
+  position: relative;
+  background: linear-gradient(to right, #ffcc70, #ff8c42);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.header-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.45;
+  max-width: 300px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="header-bg">
+    <img src="photos/image5.jpg" alt="Krishna Ji with Bansuri">
+  </div>
+  <div class="header-content">
+    <h1>Kishan Sweets</h1>
+    <p>Delighting Unnao with Traditional Mithai</p>
+  </div>
+</header>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="products">
+    <h2>Our Specialties</h2>
+    <div class="products">
+      <div class="card">
+        <img src="photos/image1.jpeg" alt="Elaichi Peda">
+        <h3>Elaichi Peda</h3>
+        <p>₹300 per kg</p>
+      </div>
+      <div class="card">
+        <img src="photos/image2.jpg" alt="Boondi Laddu">
+        <h3>Boondi Laddu</h3>
+        <p>₹120 per kg</p>
+      </div>
+      <div class="card">
+        <img src="photos/image3.webp" alt="Khoya Barfi">
+        <h3>Khoya Barfi</h3>
+        <p>₹320 per kg</p>
+      </div>
+      <div class="card">
+        <img src="photos/image4.webp" alt="Chena Sweets">
+        <h3>Doodh Barfi</h3>
+        <p>₹360 per kg</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin: 3rem 0;">
+  <a href="order.html" style="text-decoration: none;">
+   <button class="order-btn">🛒 Order Now</button>
+
+  </a>
+</div>
+
+
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/200x150?text=Sweets+1" alt="Sweet 1">
+      <img src="https://via.placeholder.com/200x150?text=Sweets+2" alt="Sweet 2">
+      <img src="https://via.placeholder.com/200x150?text=Sweets+3" alt="Sweet 3">
+      <img src="https://via.placeholder.com/200x150?text=Sweets+4" alt="Sweet 4">
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+      <div class="card">
+        <p>“Absolutely delicious sweets! The peda is my favorite.”</p>
+        <strong>— Ravi S.</strong>
+      </div>
+      <div class="card">
+        <p>“Quality and taste like no other in Unnao.”</p>
+        <strong>— Priya M.</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="contact">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Kishan Sweets</h3>
+      <p>Delighting Unnao with Traditional Mithai</p>
+    </div>
+    <div class="footer-right">
+      <p>📍 180 Jagannath Ganj, Unnao</p>
+      <p>📞 <a href="tel:9793538376">9793538376</a></p>
+      <p>🌐 <a href="https://kishansweets.com" target="_blank">www.kishansweets.com</a></p>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2025 Kishan Sweets. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

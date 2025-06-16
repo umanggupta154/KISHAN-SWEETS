@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kishan Sweets - Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffaf0;
+      color: #4b2e2e;
+      padding: 0 1rem 2rem;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(to right, #ffcc70, #ff8c42);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .header-bg img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.45;
+      max-width: 300px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #b22222;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #f0e0d0;
+    }
+
+    th {
+      background-color: #fff1e0;
+      font-weight: 600;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    #total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: green;
+      text-align: right;
+      padding: 0.5rem 1rem;
+      background: #e6ffe6;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    form {
+      background-color: #fff3e6;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff8c42, #ff4e00);
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-bg">
+      <img src="photos/image5.jpg" alt="Krishna Ji with Bansuri" />
+    </div>
+    <div class="header-content">
+      <h1>Kishan Sweets</h1>
+      <p>Order Your Favourite Traditional Mithai</p>
+    </div>
+  </header>
+
+  <h2>Place Your Order</h2>
+
+  <form action="https://formspree.io/f/movwjrlo" method="POST">
+    <table>
+      <tr>
+        <th>Sweet</th>
+        <th>Rate (per kg)</th>
+        <th>Quantity (kg)</th>
+        <th>Total Price</th>
+      </tr>
+      <tr>
+        <td>Elaichi Peda</td>
+        <td>₹300</td>
+        <td><input type="number" name="elaichi_peda" min="0" step="0.25" value="0" onchange="calculateTotal()" onkeyup="calculateTotal()"></td>
+        <td id="total_elaichi_peda">₹0</td>
+      </tr>
+      <tr>
+        <td>Boondi Laddu</td>
+        <td>₹120</td>
+        <td><input type="number" name="boondi_laddu" min="0" step="0.25" value="0" onchange="calculateTotal()" onkeyup="calculateTotal()"></td>
+        <td id="total_boondi_laddu">₹0</td>
+      </tr>
+      <tr>
+        <td>Besan Laddu</td>
+        <td>₹160</td>
+        <td><input type="number" name="besan_laddu" min="0" step="0.25" value="0" onchange="calculateTotal()" onkeyup="calculateTotal()"></td>
+        <td id="total_besan_laddu">₹0</td>
+      </tr>
+      <tr>
+        <td>Khoya Barfi</td>
+        <td>₹340</td>
+        <td><input type="number" name="khoya_barfi" min="0" step="0.25" value="0" onchange="calculateTotal()" onkeyup="calculateTotal()"></td>
+        <td id="total_khoya_barfi">₹0</td>
+      </tr>
+      <tr>
+        <td>Doodh Barfi</td>
+        <td>₹400</td>
+        <td><input type="number" name="doodh_barfi" min="0" step="0.25" value="0" onchange="calculateTotal()" onkeyup="calculateTotal()"></td>
+        <td id="total_doodh_barfi">₹0</td>
+      </tr>
+    </table>
+
+    <p id="total">Total Amount: ₹0</p>
+
+    <label>Your Name</label>
+    <input type="text" name="customer_name" required>
+
+    <label>Phone Number</label>
+    <input type="tel" name="phone" pattern="[0-9]{10}" title="Enter a 10-digit number" required>
+
+    <label>Delivery Address</label>
+    <textarea name="address" required></textarea>
+
+    <label>Payment Method</label>
+    <select name="payment_mode" required>
+      <option value="">--Select--</option>
+      <option value="Google Pay">Google Pay</option>
+      <option value="PhonePe">PhonePe</option>
+      <option value="Paytm">Paytm</option>
+      <option value="Cash on Delivery">Cash on Delivery</option>
+    </select>
+
+    <input type="hidden" name="total_amount" id="hidden_total">
+
+    <div class="button-group">
+      <button type="submit">Place Order</button>
+      <button type="reset" style="background-color:#777;">Reset</button>
+    </div>
+  </form>
+
+  <script>
+    const prices = {
+      elaichi_peda: 300,
+      boondi_laddu: 120,
+      besan_laddu: 160,
+      khoya_barfi: 340,
+      doodh_barfi: 400
+    };
+
+    function calculateTotal() {
+      let total = 0;
+      for (const sweet in prices) {
+        const qty = parseFloat(document.querySelector(`input[name="${sweet}"]`).value) || 0;
+        const itemTotal = prices[sweet] * qty;
+        document.getElementById(`total_${sweet}`).innerText = `₹${itemTotal.toFixed(2)}`;
+        total += itemTotal;
+      }
+      document.getElementById("total").innerText = "Total Amount: ₹" + total.toFixed(2);
+      document.getElementById("hidden_total").value = total.toFixed(2);
+    }
+
+    window.onload = calculateTotal;
+  </script>
+</body>
+</html>
